@@ -78,7 +78,7 @@ client.on('message', message => {
       'https://www.youtube.com/watch?v=oHg5SJYRHA0',
       'https://www.youtube.com/watch?v=6_b7RDuLwcI',
     ]
-    if (ricklinks.includes(message)) {
+    if (ricklinks.includes(message.content)) {
       //send back
       message.channel.send('That looks like a rickroll. Proceed with caution.');
    }
