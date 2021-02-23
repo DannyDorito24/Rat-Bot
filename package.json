@@ -1,0 +1,23 @@
+{
+  "name": "game-lister",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node gameLister.js"
+  },
+  "author": "DannyDorito.wav",
+  "license": "ISC",
+  "dependencies": {
+    "amqplib": "^0.6.0",
+    "bufferutil": "^4.0.3",
+    "discord.js": "^12.5.1",
+    "dotenv": "^8.2.0",
+    "electron": "^11.2.0",
+    "pino": "^6.7.0",
+    "pino-pretty": "^4.3.0",
+    "sequelize": "^6.3.5",
+    "tedious": "^9.2.1"
+  }
+}
