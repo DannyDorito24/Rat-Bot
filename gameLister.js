@@ -50,7 +50,13 @@ client.on('message', message => {
     if (message.content === "gun") {
       message.channel.send(gun_res[gun_index])
     }
-    if (message.content === 'youtube.com/watch?v=dQw4w9WgXcQ') {
+    if (message.content === 'when in doubt') {
+      message.channel.send('vote stan out')
+    }
+    if (message.content === 'uwu') {
+      message.channel.send('Furry detected on American soil. Lethal force engaged')
+    }
+    if (message.content === 'dead chat xD') {
        //send back
        message.channel.send('dead chat xD');
     }
@@ -76,7 +82,7 @@ client.on('message', message => {
       message.channel.send('did somebody say')
       setTimeout(() => {message.channel.send('***R A T***')}, 1000)
     }
-    if (message.content === '!horny') {
+    if (message.content === '.horny') {
       //send back
       message.reply('https://tenor.com/view/horny-jail-bonk-dog-hit-head-stop-being-horny-gif-17298755');
       message.channel.bulkDelete(1);
