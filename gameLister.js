@@ -54,25 +54,6 @@ client.on('message', message => {
        //send back
        message.channel.send('dead chat xD');
     }
-    if (message.content === '!furry') {
-      message.channel.send("rawr!");
-      setTimeout(() => {message.channel.send('​​x3 nuzzles, pounces on you, uwu you so warm')}, 10000)
-      setTimeout(() => {message.channel.send("Couldn't help but notice your bulge from across the floor")}, 10000)
-      setTimeout(() => {message.channel.send('Nuzzles your necky wecky ~murr~, hehe​')}, 10000)
-      setTimeout(() => {message.channel.send('Unzips your baggy ass pants, oof baby you so musky​')}, 10000)
-      setTimeout(() => {message.channel.send("Take me home, pet me, and make me yours and don't forget to stuff me")}, 10000)
-      setTimeout(() => {message.channel.send('​See me wag my widdle baby tail all for your bolgy-wolgy')}, 10000)
-      setTimeout(() => {message.channel.send('Kissies and lickies your neck​')}, 10000)
-      setTimeout(() => {message.channel.send('​I hope daddy likies')}, 10000)
-      setTimeout(() => {message.channel.send('​Nuzzles and wuzzles your chest')}, 10000)
-      setTimeout(() => {message.channel.send("I be gettin' thirsty")}, 10000)
-      setTimeout(() => {message.channel.send('Hey, I got a little itch, you think you can help me?​')}, 10000)
-      setTimeout(() => {message.channel.send('​Only seven inches long, uwu, please adopt me')}, 10000)
-      setTimeout(() => {message.channel.send('Paws on your bulge as I lick my lips​')}, 10000)
-      setTimeout(() => {message.channel.send("'Bout to hit 'em with this furry shit​")}, 10000)
-      setTimeout(() => {message.channel.send("Pain.")}, 30000)
-      
-    }
     const ricklinks = [
       'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
       'https://www.youtube.com/watch?v=oHg5SJYRHA0',
@@ -91,7 +72,7 @@ client.on('message', message => {
         message.reply('https://tenor.com/view/post-this-rat-rat-post-dancing-bounce-gif-16643947');
         message.channel.bulkDelete(1);
     }
-    if (message.content.includes('rat')) {
+    if (message.content === 'rat') {
       message.channel.send('did somebody say')
       setTimeout(() => {message.channel.send('***R A T***')}, 1000)
     }
