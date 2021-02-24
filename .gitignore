@@ -27,6 +27,6 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-#other files
+### other files ###
 node_modules
 .env

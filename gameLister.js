@@ -80,7 +80,7 @@ client.on('message', message => {
     ]
     if (ricklinks.includes(message.content)) {
       //send back
-      message.channel.send('That looks like a rickroll. Proceed with caution.');
+      message.channel.send('That looks like a rickroll...');
    }
     if (message.content === '!katkot') {
       message.channel.send('https://cdn.discordapp.com/attachments/803001546291281931/803030047392923708/image0.webp')
@@ -175,7 +175,7 @@ if(message.member.roles.cache.find(r => r.name === "Staff")) {
         } else if (command === 'ping') {
           message.channel.send(`🏓 Latency is ${Date.now() - message.createdTimestamp}ms. API Latency is ${Math.round(client.ws.ping)}ms.`)
         } else if (command === 'init') {
-          message.channel.send("Successfully restarted Game Lister v. 1.0.0; Node Version 15.3.0")
+          message.channel.send("Successfully restarted Game Lister v. 1.2.6; Node Version 15.3.0")
         } else message.channel.send("Unknown Command. Please try again.")
     }
 })})
