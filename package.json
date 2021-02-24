@@ -1,8 +1,8 @@
 {
   "name": "game-lister",
-  "version": "1.0.0",
+  "version": "1.2.6",
   "description": "",
-  "main": "main.js",
+  "main": "gameLister.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node gameLister.js"
