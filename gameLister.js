@@ -70,7 +70,7 @@ client.on('message', message => {
       //send back
       message.channel.send('That looks like a rickroll...');
    }
-    if (message.content === '!katkot') {
+    if (message.content === '.katkot') {
       message.channel.send('https://cdn.discordapp.com/attachments/803001546291281931/803030047392923708/image0.webp')
       message.channel.bulkDelete(1)
     }
