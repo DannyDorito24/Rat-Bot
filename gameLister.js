@@ -120,16 +120,12 @@ client.on('message', async message => {
 
 
 if (command === 'addrole') {
-  try {
 if(message.member.roles.cache.find(r => r.name === "Staff")) {
   let userToModify = message.mentions.members.first();
   let roleToAdd = message.mentions.roles.first();
   userToModify.addRole(roleToAdd);
-}}
-  catch(err) {
-  console.log(err)
-}} else {
-    message.channel.send("You do not have the required role to use this command.");
+}
+else(message.channel.send("You do not have the required role to use this command."));
 };
 
         if (command === 'addgame') {
