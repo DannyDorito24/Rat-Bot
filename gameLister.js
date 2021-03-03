@@ -1,4 +1,5 @@
 require('dotenv').config();
+const CronJob = require('cron').CronJob;
 const { Client } = require('discord.js');
 const client = new Client({ ws: { intents: ['GUILD_MESSAGES','DIRECT_MESSAGES','GUILDS','GUILD_EMOJIS','GUILD_MEMBERS','GUILD_MESSAGE_REACTIONS','GUILD_MESSAGE_TYPING'] } });
 const fs = require('fs');
@@ -9,7 +10,12 @@ client.once('ready', () => {
 });
 
 client.login(TOKEN);
-
+const pfpset = new CronJob('1 0 * * 5', function(){
+  client.user.setAvatar("")
+});
+const pfp_revert = new CronJob('1 0 * * 6', function() {
+  client.user.setAvatar("./ratpfp.png")
+})
 const activities_list = [
   "with the .help command.",
   "with the developers console",
@@ -25,7 +31,7 @@ const activities_list = [
   "h",
   "oh no a gun",
   ];
-
+console.log(getDay())
 client.on('ready', () => {
   setInterval(() => {
       const index = Math.floor(Math.random() * (activities_list.length - 1) + 1); 
@@ -160,6 +166,10 @@ else(message.channel.send("You do not have the required role to use this command
           message.channel.send(`🏓 Latency is ${Date.now() - message.createdTimestamp}ms. API Latency is ${Math.round(client.ws.ping)}ms.`)
         } else if (command === 'init') {
           message.channel.send("Successfully restarted Game Lister v. 1.2.6; Node Version 15.3.0")
-        } else message.channel.send("Unknown Command. Please try again.")
+        } else if (command === 'setAcursed') {
+          client.user.setAvatar("./cursed.png")
+        } else if (command === 'setAnormal') {
+          client.user.setAvatar("./ratpfp.png")
+        }
     }
 })})
