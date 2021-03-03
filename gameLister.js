@@ -168,6 +168,7 @@ else(message.channel.send("You do not have the required role to use this command
           client.user.setAvatar("./ratpfp.png")
         } else if (command === 'setAvatar') {
           client.user.setAvatar(args)
+          message.channel.bulkDelete(1)
         }
     }
 })
