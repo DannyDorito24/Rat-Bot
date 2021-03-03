@@ -121,7 +121,6 @@ client.on('message', async message => {
         const command = input.shift();
         const args = input.join(' ');
         console.log(command);
-        console.log(args);
 
 
 if (command === 'addrole') {
