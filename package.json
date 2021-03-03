@@ -1,11 +1,11 @@
 {
   "name": "game-lister",
-  "version": "1.2.6",
+  "version": "1.22.0",
   "description": "",
   "main": "gameLister.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node gameLister.js"
+    "start": "node gameLister.js --trace-warnings"
   },
   "author": "DannyDorito.wav",
   "license": "ISC",
