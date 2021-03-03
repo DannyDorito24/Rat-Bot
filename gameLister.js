@@ -5,9 +5,9 @@ const client = new Client({ ws: { intents: ['GUILD_MESSAGES','DIRECT_MESSAGES','
 const fs = require('fs');
 const gamers = require("./gamers.json");
 const TOKEN = process.env.TOKEN
-const astolfo = './assets/astolfo.jpeg'
-const rat = './assets/ratpfp.png'
-const cursed = './assets/cursed.png'
+const astolfo = './astolfo.jpeg'
+const rat = './ratpfp.png'
+const cursed = './cursed.png'
 client.once('ready', () => {
     console.log('The Rat has been released');
 });
@@ -25,14 +25,12 @@ const activities_list = [
   "with some code",
   "with JavaScript",
   "please help I can't escape",
-  "h",
   "my status is the only one that changes haha",
-  "h",
   "look Dyno I'm better than you",
-  "h",
   "I'm literally a rat",
   "h",
   "oh no a gun",
+  "ok, who set my avatar to Astolfo"
   ];
 client.on('ready', () => {
   setInterval(() => {
