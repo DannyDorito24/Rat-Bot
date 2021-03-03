@@ -5,7 +5,7 @@
   "main": "gameLister.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node gameLister.js --trace-warnings"
+    "start": "node --trace-warnings gameLister.js"
   },
   "author": "DannyDorito.wav",
   "license": "ISC",

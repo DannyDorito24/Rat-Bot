@@ -131,9 +131,9 @@ if(message.member.roles.cache.find(r => r.name === "Staff")) {
   userToModify.addRole(roleToAdd);
 }
 else(message.channel.send("You do not have the required role to use this command."));
-};
+}
 
-        if (command === 'addgame') {
+        else if (command === 'addgame') {
           message.channel.send("Sorry, either there was an error or you do not have permission to use this command.")
         } else if (command === 'removegame') {
           message.channel.send("Sorry, either there was an error or you do not have permission to use this command.")
