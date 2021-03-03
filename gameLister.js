@@ -5,9 +5,6 @@ const client = new Client({ ws: { intents: ['GUILD_MESSAGES','DIRECT_MESSAGES','
 const fs = require('fs');
 const gamers = require("./gamers.json");
 const TOKEN = process.env.TOKEN
-const astolfo = './astolfo.jpeg'
-const rat = './ratpfp.png'
-const cursed = './cursed.png'
 client.once('ready', () => {
     console.log('The Rat has been released');
 });
@@ -19,25 +16,6 @@ const pfpset = new CronJob('1 0 * * 5', function(){
 const pfp_revert = new CronJob('1 0 * * 6', function() {
   client.user.setAvatar("./ratpfp.png")
 })
-const activities_list = [
-  "with the .help command.",
-  "with the developers console",
-  "with some code",
-  "with JavaScript",
-  "please help I can't escape",
-  "my status is the only one that changes haha",
-  "look Dyno I'm better than you",
-  "I'm literally a rat",
-  "h",
-  "oh no a gun",
-  "ok, who set my avatar to Astolfo"
-  ];
-client.on('ready', () => {
-  setInterval(() => {
-      const index = Math.floor(Math.random() * (activities_list.length - 1) + 1); 
-      client.user.setActivity(activities_list[index]);
-  }, 5000); 
-});
 
 //funni message responses
 client.on('message', message => {
@@ -165,6 +143,8 @@ else(message.channel.send("You do not have the required role to use this command
           message.channel.send("Successfully restarted Game Lister v. 1.22.0; Node Version 15.3.0")
         } else if (command === 'setAvatar') {
           client.user.setAvatar(args)
+        } else if (command === 'setStatus') {
+          client.user.setStatus(args)
         }
     }
 })

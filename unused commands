@@ -1,0 +1,18 @@
+const activities_list = [
+  "with the .help command.",
+  "with the developers console",
+  "with some code",
+  "with JavaScript",
+  "please help I can't escape",
+  "my status is the only one that changes haha",
+  "look Dyno I'm better than you",
+  "I'm literally a rat",
+  "h",
+  "oh no a gun",
+  "ok, who set my avatar to Astolfo"
+  ];
+client.on('ready', () => {
+  setInterval(() => {
+      const index = Math.floor(Math.random() * (activities_list.length - 1) + 1); 
+      client.user.setActivity(activities_list[index]);
+  }, 5000); 
