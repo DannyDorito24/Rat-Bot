@@ -5,6 +5,9 @@ const client = new Client({ ws: { intents: ['GUILD_MESSAGES','DIRECT_MESSAGES','
 const fs = require('fs');
 const gamers = require("./gamers.json");
 const TOKEN = process.env.TOKEN
+const astolfo = './assets/astolfo.jpeg'
+const rat = './assets/ratpfp.png'
+const cursed = './assets/cursed.png'
 client.once('ready', () => {
     console.log('The Rat has been released');
 });
@@ -162,10 +165,6 @@ else(message.channel.send("You do not have the required role to use this command
           message.channel.send(`🏓 Latency is ${Date.now() - message.createdTimestamp}ms. API Latency is ${Math.round(client.ws.ping)}ms.`)
         } else if (command === 'init') {
           message.channel.send("Successfully restarted Game Lister v. 1.22.0; Node Version 15.3.0")
-        } else if (command === 'setAcursed') {
-          client.user.setAvatar("./cursed.png")
-        } else if (command === 'setAnormal') {
-          client.user.setAvatar("./ratpfp.png")
         } else if (command === 'setAvatar') {
           client.user.setAvatar(args)
           message.channel.bulkDelete(1)
