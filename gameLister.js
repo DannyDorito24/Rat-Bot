@@ -118,6 +118,7 @@ client.on('message', async message => {
         const command = input.shift();
         const args = input.join(' ');
         console.log(command);
+        console.log(args);
 
 
 if (command === 'addrole') {
@@ -165,6 +166,8 @@ else(message.channel.send("You do not have the required role to use this command
           client.user.setAvatar("./cursed.png")
         } else if (command === 'setAnormal') {
           client.user.setAvatar("./ratpfp.png")
+        } else if (command === 'setAvatar') {
+          client.user.setAvatar(args)
         }
     }
 })
