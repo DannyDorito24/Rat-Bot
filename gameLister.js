@@ -111,10 +111,7 @@ client.on('message', message => {
 
 const prefix = '.'
 //If no prefix, ignore message
-client.on('message', async (msg) => {
-    if(!msg.content.startsWith(prefix)) {
-        return
-    }
+
 client.on('message', async message => {
     if (message.content.startsWith(prefix)) {
         const input = message.content.slice(prefix.length).trim().split(' ');
@@ -170,4 +167,4 @@ else(message.channel.send("You do not have the required role to use this command
           client.user.setAvatar("./ratpfp.png")
         }
     }
-})})
+})
