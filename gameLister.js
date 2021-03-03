@@ -31,7 +31,6 @@ const activities_list = [
   "h",
   "oh no a gun",
   ];
-console.log(getDay())
 client.on('ready', () => {
   setInterval(() => {
       const index = Math.floor(Math.random() * (activities_list.length - 1) + 1); 
@@ -165,7 +164,7 @@ else(message.channel.send("You do not have the required role to use this command
         } else if (command === 'ping') {
           message.channel.send(`🏓 Latency is ${Date.now() - message.createdTimestamp}ms. API Latency is ${Math.round(client.ws.ping)}ms.`)
         } else if (command === 'init') {
-          message.channel.send("Successfully restarted Game Lister v. 1.2.6; Node Version 15.3.0")
+          message.channel.send("Successfully restarted Game Lister v. 1.21.0; Node Version 15.3.0")
         } else if (command === 'setAcursed') {
           client.user.setAvatar("./cursed.png")
         } else if (command === 'setAnormal') {
