@@ -167,7 +167,6 @@ else(message.channel.send("You do not have the required role to use this command
           message.channel.send("Successfully restarted Game Lister v. 1.22.0; Node Version 15.3.0")
         } else if (command === 'setAvatar') {
           client.user.setAvatar(args)
-          message.channel.bulkDelete(1)
         }
     }
 })
