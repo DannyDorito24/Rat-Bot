@@ -147,6 +147,10 @@ else(message.channel.send("You do not have the required role to use this command
           client.user.setAvatar(args)
         } else if (command === 'setStatus') {
           client.user.setActivity(args)
+        } else if (command === 'setUsername') {
+          client.user.setUsername(args)
+        } else if (command === 'djs') {
+          args
         }
     }
 })
