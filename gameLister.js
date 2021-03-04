@@ -11,10 +11,12 @@ client.once('ready', () => {
 
 client.login(TOKEN);
 const pfpset = new CronJob('1 0 * * 5', function(){
-  client.user.setAvatar("")
+  client.user.setAvatar("./astolfo.jpg");
+  client.user.setActivity("FEMBOY FRIDAY")
 });
 const pfp_revert = new CronJob('1 0 * * 6', function() {
-  client.user.setAvatar("./ratpfp.png")
+  client.user.setAvatar("./ratpfp.png");
+  client.user.setActivity("with the .setStatus command")
 })
 
 //funni message responses
