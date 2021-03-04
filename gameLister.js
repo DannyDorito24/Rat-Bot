@@ -6,6 +6,13 @@ const fs = require('fs');
 const gamers = require("./gamers.json");
 const TOKEN = process.env.TOKEN
 client.once('ready', () => {
+  client.user.setPresence({
+    status: 'online',
+    activity: {
+        name: "the world burn",
+        type: "WATCHING"
+    }
+});
     console.log('The Rat has been released');
 });
 
