@@ -17,11 +17,11 @@ client.once('ready', () => {
 });
 
 client.login(TOKEN);
-cron.schedule('1 0 * * 5', function(){
+CronJob.schedule('1 0 * * 5', function(){
   client.user.setAvatar("./astolfo.jpg");
   client.user.setActivity("FEMBOY FRIDAY")
 });
-cron.schedule('1 0 * * 6', function() {
+CronJob.schedule('1 0 * * 6', function() {
   client.user.setAvatar("./ratpfp.png");
   client.user.setActivity("with the .setStatus command")
 })
