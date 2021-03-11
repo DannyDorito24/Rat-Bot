@@ -1,5 +1,6 @@
 require('dotenv').config();
 const CronJob = require('cron').CronJob;
+const { Discord } = require('discord.js');
 const { Client } = require('discord.js');
 const client = new Client({ ws: { intents: ['GUILD_MESSAGES','DIRECT_MESSAGES','GUILDS','GUILD_EMOJIS','GUILD_MEMBERS','GUILD_MESSAGE_REACTIONS','GUILD_MESSAGE_TYPING'] } });
 const fs = require('fs');
