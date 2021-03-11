@@ -99,17 +99,7 @@ client.on('message', async message => {
         console.log(command);
         console.log(args);
 
-
-if (command === 'addrole') {
-if(message.member.roles.cache.find(r => r.name === "Staff")) {
-  let userToModify = message.mentions.members.first();
-  let roleToAdd = message.mentions.roles.first();
-  userToModify.addRole(roleToAdd);
-}
-else(message.channel.send("You do not have the required role to use this command."));
-}
-
-        else if (command === 'addgame') {
+        if (command === 'addgame') {
           message.channel.send("Sorry, either there was an error or you do not have permission to use this command.")
         } else if (command === 'removegame') {
           message.channel.send("Sorry, either there was an error or you do not have permission to use this command.")
@@ -139,8 +129,6 @@ else(message.channel.send("You do not have the required role to use this command
             message.channel.send("There was an error.")
         } else if (command === 'ping') {
           message.channel.send(`🏓 Latency is ${Date.now() - message.createdTimestamp}ms. API Latency is ${Math.round(client.ws.ping)}ms.`)
-        } else if (command === 'init') {
-          message.channel.send("Successfully restarted Game Lister v. 1.40.1; Node Version 15.3.0")
         } else if (command === 'setAvatar') {
           client.user.setAvatar(args)
         } else if (command === 'setStatus') {
