@@ -5,6 +5,13 @@ const client = new Client({ ws: { intents: ['GUILD_MESSAGES','DIRECT_MESSAGES','
 const fs = require('fs');
 const gamers = require("./gamers.json");
 const TOKEN = process.env.TOKEN
+client.commands = new Discord.Collection();
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+for (const file of commandFiles) {
+  const command = require('./command/${file}');
+  //set new items in the collection, creating a key with the command name and value as the exported module for the command
+  client.commands.set(command.name, command);
+}
 client.once('ready', () => {
   client.user.setPresence({
     status: 'online',
