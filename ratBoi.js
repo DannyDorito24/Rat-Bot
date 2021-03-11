@@ -1,18 +1,10 @@
 require('dotenv').config();
 const CronJob = require('cron').CronJob;
-const { Discord } = require('discord.js');
 const { Client } = require('discord.js');
 const client = new Client({ ws: { intents: ['GUILD_MESSAGES','DIRECT_MESSAGES','GUILDS','GUILD_EMOJIS','GUILD_MEMBERS','GUILD_MESSAGE_REACTIONS','GUILD_MESSAGE_TYPING'] } });
 const fs = require('fs');
 const gamers = require("./gamers.json");
 const TOKEN = process.env.TOKEN
-client.commands = new Discord.Collection();
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
-for (const file of commandFiles) {
-  const command = require('./command/${file}');
-  //set new items in the collection, creating a key with the command name and value as the exported module for the command
-  client.commands.set(command.name, command);
-}
 client.once('ready', () => {
   client.user.setPresence({
     status: 'online',
@@ -107,7 +99,7 @@ client.on('message', async message => {
         console.log(command);
         console.log(args);
 
-        if (command === 'addgame') {
+          if (command === 'addgame') {
           message.channel.send("Sorry, either there was an error or you do not have permission to use this command.")
         } else if (command === 'removegame') {
           message.channel.send("Sorry, either there was an error or you do not have permission to use this command.")
@@ -137,6 +129,8 @@ client.on('message', async message => {
             message.channel.send("There was an error.")
         } else if (command === 'ping') {
           message.channel.send(`🏓 Latency is ${Date.now() - message.createdTimestamp}ms. API Latency is ${Math.round(client.ws.ping)}ms.`)
+        } else if (command === 'init') {
+          message.channel.send("Successfully restarted Game Lister v. 1.40.1; Node Version 15.3.0")
         } else if (command === 'setAvatar') {
           client.user.setAvatar(args)
         } else if (command === 'setStatus') {
