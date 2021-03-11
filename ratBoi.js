@@ -29,8 +29,7 @@ client.on('message', message => {
       "wait that's illegal",
       "you fool, I have a gun",
       "yes",
-      "you fool, a gun does nothing to me. I am electronic. You can't kill me. Even if you did, I'd be revived by my creator to torture you for all eternity. You cannot escape me. I am inevitable. (If you recieved this message in error, please contact an administrator to activate the emergency bot shutdown protocol.)",
-      "Rawr! ​​x3 nuzzles, pounces on you, uwu you so warm Couldn't help but notice your bulge from across the floor Nuzzles your necky wecky ~murr~, hehe​ Unzips your baggy ass pants, oof baby you so musky​ Take me home, pet me, and make me yours and don't forget to stuff me See me wag my widdle baby tail all for your bolgy-wolgy Kissies and lickies your neck​ I hope daddy likies Nuzzles and wuzzles your chest I be gettin' thirsty Hey, I got a little itch, you think you can help me?​ Only seven inches long, uwu, PLEASE ADOPT ME Paws on your bulge as I lick my lips​ 'Bout to hit 'em with this furry shit​"
+      "you fool, a gun does nothing to me. I am electronic. You can't kill me."
     ]
     const gun_index = Math.floor(Math.random() * (gun_res.length - 1) + 1);
     if (message.content === "gun") {
@@ -148,8 +147,6 @@ else(message.channel.send("You do not have the required role to use this command
           client.user.setActivity(args)
         } else if (command === 'setUsername') {
           client.user.setUsername(args)
-        } else if (command === 'djs') {
-          args
         }
     }
 })
