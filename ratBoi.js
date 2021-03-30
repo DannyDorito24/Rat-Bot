@@ -1,10 +1,20 @@
 require('dotenv').config();
 const CronJob = require('cron').CronJob;
-const { Client } = require('discord.js');
+const { Client, Discord, MessageEmbed } = require('discord.js');
 const client = new Client({ ws: { intents: ['GUILD_MESSAGES','DIRECT_MESSAGES','GUILDS','GUILD_EMOJIS','GUILD_MEMBERS','GUILD_MESSAGE_REACTIONS','GUILD_MESSAGE_TYPING'] } });
 const fs = require('fs');
 const gamers = require("./gamers.json");
 const TOKEN = process.env.TOKEN
+
+//enable a native sleep function
+function sleep(milliseconds) {
+  const date = Date.now();
+  let currentDate = null;
+  do {
+    currentDate = Date.now();
+  } while (currentDate - date < milliseconds);
+}
+
 client.once('ready', () => {
   client.user.setPresence({
     status: 'online',
@@ -86,7 +96,7 @@ client.on('message', message => {
     };
   });
 
-//Begin actually doing things
+//Commands
 
 const prefix = '.'
 //If no prefix, ignore message
@@ -98,36 +108,7 @@ client.on('message', async message => {
         const args = input.join(' ');
         console.log(command);
         console.log(args);
-
-          if (command === 'addgame') {
-          message.channel.send("Sorry, either there was an error or you do not have permission to use this command.")
-        } else if (command === 'removegame') {
-          message.channel.send("Sorry, either there was an error or you do not have permission to use this command.")
-        } else if (command === 'gamelist') {
-          try {
-            var json = {
-              TF2: [
-                  "User1",
-                  "User2",
-                  "User3"
-              ]
-          }
-            JSON.parse(json);
-            message.channel.send(json[0].TF2);
-          }
-          catch(err) {
-            message.channel.send("Error while parsing the JSON file: " + err)
-          }
-        } else if (command === 'nameadd') {
-          try {
-            json.TF2.push({args})
-          }
-          catch(err) {
-          message.channel.send("There was an error:" + err)
-          }
-        } else if (command === 'nameremove') {
-            message.channel.send("There was an error.")
-        } else if (command === 'ping') {
+          if (command === 'ping') {
           message.channel.send(`🏓 Latency is ${Date.now() - message.createdTimestamp}ms. API Latency is ${Math.round(client.ws.ping)}ms.`)
         } else if (command === 'setAvatar') {
           client.user.setAvatar(args)
@@ -136,12 +117,17 @@ client.on('message', async message => {
         } else if (command === 'setUsername') {
           client.user.setUsername(args)
         } else if (command === 'init') {
-          message.channel.send("Restarting, Please Wait...")
-          message.channel.messages.fetch({around: msgId, limit: 1})
-            .then(msg => {
-              const fetchedMsg = msg.first();
-              fetchedMsg.edit("Restarted Rat Bot Version 2.0. Loading...")
-            })
+          //const restartEmbed = new MessageEmbed()
+            //.setColor('#FF0000')
+            //.setTitle('Restarting...')
+            //.setDescription('Please Wait... This should take about 10 seconds...')
+            //message.channel.send(restartEmbed);
+          const restartedEmbed = new MessageEmbed()
+            .setColor('#00FF00')
+            .setTitle('Restarted!')
+            .setDescription('Successfully Restarted Rat Bot Version 2.1; Node Version 15.3.0')
+            message.channel.send(restartedEmbed);
+            sleep(10000);
+            }
         }
-    }
-})
+    })
