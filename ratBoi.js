@@ -129,14 +129,19 @@ client.on('message', async message => {
             message.channel.send("There was an error.")
         } else if (command === 'ping') {
           message.channel.send(`🏓 Latency is ${Date.now() - message.createdTimestamp}ms. API Latency is ${Math.round(client.ws.ping)}ms.`)
-        } else if (command === 'init') {
-          message.channel.send("Successfully restarted Game Lister v. 1.40.1; Node Version 15.3.0")
         } else if (command === 'setAvatar') {
           client.user.setAvatar(args)
         } else if (command === 'setStatus') {
           client.user.setActivity(args)
         } else if (command === 'setUsername') {
           client.user.setUsername(args)
+        } else if (command === 'init') {
+          message.channel.send("Restarting, Please Wait...")
+          message.channel.messages.fetch({around: msgId, limit: 1})
+            .then(msg => {
+              const fetchedMsg = msg.first();
+              fetchedMsg.edit("Restarted Rat Bot Version 2.0. Loading...")
+            })
         }
     }
 })
